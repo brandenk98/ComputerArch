@@ -1,0 +1,26 @@
+Branden Kushnir
+bik9
+
+For the cache simulator I had a tough time as I was sick and also had a big hockey tourtament, but obviously no excuses. 
+However, I'd still like to share my opinion as to how I would have liked to create it.My intentions for the simulator 
+was to  create a 2-D matrix. What I tried doing is to make sure the number of sets isthe amount of rows there are. While the 
+columns would correlate with the associativity which would've been the number of blocks in a set. The for each elememnt in the 
+array three variables of information would be stored. They are tag, set, and counter. Counter would be helpful for LRU since 
+there would be a counter to see which one is the least used it wouldcount how many times the information the piece of data would 
+be used, to know which would be kicked out. All you have to dois compare the amount of times used and see which is the least.
+
+I also would have implemented FIFO, it would've been easy because the first of every row would be first to be implemeted and then be 
+filled. The information for the amount of times used would always go back to the beginning of the row and kick the element, 
+since it's the first one to be put in a matrix.
+
+For prefetching it would allow for there to  be more hits, but the number of writes would actually be the same. Because every time 
+you read into memory and see that if it's a mtrix you need to write that element and the one after. Increasing the amount of hits 
+since read faster and hits are being filled faster. Essentially gettimng more information with each element, because it would need 
+to write anyways; however, it's now being written earlier meaning 
+it can cause more hits. 
+
+
+This is how I would've liked to deseign my simulator, I understand I will have many  points taken  away, but if some gradtitude 
+can be given from this it would be greatly apprecitaed. 
+
+Thank you for a great semester!
