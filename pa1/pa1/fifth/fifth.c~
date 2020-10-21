@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(int argc, char *argv[]){
+	
+  int temp, i;
+      for(i = 1; i <= argc; i++){	
+	for(temp = 0; temp < strlen(argv[i]); temp++){
+            if(argv[i][temp] == 'a' || argv[i][temp] == 'e' || argv[i][temp] == 'i' || argv[i][temp] == 'o' || argv[i][temp] == 'u' || argv[i][temp] == 'A' || argv[i][temp] == 'E' || argv[i][temp] == 'I' || argv[i][temp] == 'O' || argv[i][temp] == 'U'){
+                  printf("%c",argv[i][temp]);
+            }
+}
+	
+  }
+	printf("\n");
+      return 0;
+}

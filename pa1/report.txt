@@ -1,0 +1,40 @@
+dir is  /ilab/users/zq58/cs211/cs211_spring_pa1_valgrind/grader
+first  found!
+Grading first
+Score is  10.0
+
+
+second  found!
+Grading second
+Score is  20.0
+
+
+third  found!
+Grading third
+Score is  20.0
+
+
+fourth  found!
+Grading fourth
+Score is  20.0
+
+
+fifth  found!
+Grading fifth
+
+Score is  10.0
+
+
+sixth  found!
+Grading sixth
+Score is  20.0
+
+
+You scored 
+20.0  in  third
+20.0  in  sixth
+20.0  in  second
+20.0  in  fourth
+10.0  in  fifth
+10.0  in  first
+Your TOTAL SCORE =  100.0 /100

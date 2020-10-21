@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc,char *args[])
+
+{
+
+char ch,newl;
+
+int n,hash[10000],i,collision=0,search=0;
+
+for(i=0;i<10000;i++)
+
+{
+
+hash[i]=0;
+
+}
+
+FILE *fp;
+
+fp=fopen(args[1],"r"); //open file to read
+
+while(fscanf(fp,"%c%d%c",&ch,&n,&newl)!=EOF)//reading file
+
+{
+
+//operation is stored in ch , nuber is stored in n
+
+//newl is to read new line character in file
+
+//printf("op=%c n=%d ",ch,n);
+
+if(ch=='i') //if operation is insert
+
+{
+
+if(n%10000==0) //check hash table entry n%10000 is empty or not
+
+{
+
+hash[n%10000]=n; //if empty insert there
+
+}
+
+else
+
+{
+
+collision++; //else don't insert and increment collision count
+
+}
+
+}
+
+else //if operation is search
+
+{
+
+if(hash[n%10000]==n) //chech n%10000 contains n or not
+
+{
+
+search++; //if it contains n then increment successful search count by 1
+
+}
+
+}
+
+}
+
+fclose(fp);
+
+printf("Number of collisions:%d ",collision);
+
+printf("Number of successful seaches:%d",search);
+
+}

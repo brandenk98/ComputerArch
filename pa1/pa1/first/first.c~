@@ -1,0 +1,170 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+ 
+
+void sort(int arr[], int size)
+
+{
+
+int temp, i, j, leftPos = 0, rightPos = 0;
+
+int countOfEvens = 0;
+
+int tempArr[size];
+
+//get the count of even number in the array
+
+for (i = 0; i < size; i++)
+
+{
+
+if(arr[i] % 2 == 0)
+
+countOfEvens++;
+
+}
+
+//set the start of right position (position where odd numbers start)
+
+rightPos = countOfEvens;
+
+//using bubble sort technique sort the array
+
+for (i = 0; i < size; i++)
+
+    {
+
+        for (j = 0; j < (size - i - 1); j++)
+
+        {
+
+            if (arr[j] > arr[j + 1])
+
+            {
+
+                temp = arr[j];
+
+                arr[j] = arr[j + 1];
+
+                arr[j + 1] = temp;
+
+            }
+
+        }
+
+    }
+
+    
+
+    //iterate through all the elements in the array
+
+    for(i = 0; i < size; i++)
+
+    {
+
+    //move the even numbers to the left
+
+    if(arr[i] % 2 == 0)
+
+    {
+
+    tempArr[leftPos] = arr[i];
+
+    leftPos++;
+
+}
+
+//move the odd numbers to the right
+
+else
+
+{
+
+tempArr[rightPos] = arr[i];
+
+rightPos++;
+
+}
+
+}
+
+//copy the temp array into the main array
+
+for(i = 0; i < size; i++)
+
+{
+
+arr[i] = tempArr[i];
+
+}
+
+}
+
+ 
+
+int main()
+
+{
+
+    int arr[100];
+
+    int size, i;
+
+    FILE *fptr;
+
+//open the file to read the array
+
+    if ((fptr = fopen("file1.txt", "r")) == NULL)
+
+    {
+
+        printf("Error! opening file");
+
+exit(1);         
+
+    }
+
+ 
+
+    //read the size of the array from the file
+
+    fscanf(fptr,"%d", &size);
+
+    //read the numbers from the file and store them in the array
+
+    for(i = 0; i < size; i++)
+
+    {
+
+    fscanf(fptr, "%d", &arr[i]);
+
+}
+
+//close the file
+
+    fclose(fptr);
+
+    //sort the array by calling the sort function
+
+    sort(arr, size);
+
+    //print the sorted array to the output screen
+
+    for(i = 0; i < size; i++)
+
+    {
+
+    printf("%d ", arr[i]);
+
+}
+
+
+    return 0;
+
+}
+
+
+
+
